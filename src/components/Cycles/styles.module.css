@@ -1,0 +1,26 @@
+.cyclos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.cyclosDots {
+  display: flex;
+  gap: 0.8rem;
+}
+.cyclosDot {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+.workTime {
+  background-color: var(--warning);
+}
+.shortBreakTime {
+  background-color: var(--primary);
+}
+.LongBreakTime {
+  background-color: var(--info);
+}
