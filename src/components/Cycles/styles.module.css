@@ -1,26 +1,39 @@
-.cyclos {
+.cycles {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 1.6rem;
 }
-.cyclosDots {
+
+.cycleDots {
   display: flex;
+
   gap: 0.8rem;
 }
-.cyclosDot {
+
+.cycleDot {
   width: 2rem;
+
   height: 2rem;
+
   background-color: var(--primary);
+
   border-radius: 50%;
 }
+
 .workTime {
-  background-color: var(--warning);
+  background: var(--warning);
 }
+
 .shortBreakTime {
-  background-color: var(--primary);
+  background: var(--primary);
 }
-.LongBreakTime {
-  background-color: var(--info);
+
+.longBreakTime {
+  background: var(--info);
 }

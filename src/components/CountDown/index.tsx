@@ -1,5 +1,9 @@
 import styles from './styles.module.css';
 
-export function CountDown() {
-  return <div className={styles.container}>00:00</div>;
+type CoutDownProps = {
+  formattedSecondsRemaining: string;
+};
+
+export function CountDown({ formattedSecondsRemaining }: CoutDownProps) {
+  return <div className={styles.container}>{formattedSecondsRemaining}</div>;
 }

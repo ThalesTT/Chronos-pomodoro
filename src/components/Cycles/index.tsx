@@ -1,18 +1,26 @@
 import styles from './styles.module.css';
 
-export function Cyclos() {
+export function Cycles() {
   return (
-    <div className={styles.cyclos}>
+    <div className={styles.cycles}>
       <span>Ciclos:</span>
-      <div className={styles.cyclesDots}>
-        <span className={`${styles.cyclesDots}${styles.workTime}`}></span>
-        <span className={`${styles.cyclesDots}${styles.shortBreakTime}`}></span>
-        <span className={`${styles.cyclesDots}${styles.workTime}`}></span>
-        <span className={`${styles.cyclesDots}${styles.shortBreakTime}`}></span>
-        <span className={`${styles.cyclesDots}${styles.workTime}`}></span>
-        <span className={`${styles.cyclesDots}${styles.shortBreakTime}`}></span>
-        <span className={`${styles.cyclesDots}${styles.workTime}`}></span>
-        <span className={`${styles.cyclesDots}${styles.LongBreakTime}`}></span>
+
+      <div className={styles.cycleDots}>
+        <span className={`${styles.cycleDot} ${styles.workTime}`}></span>
+
+        <span className={`${styles.cycleDot} ${styles.shortBreakTime}`}></span>
+
+        <span className={`${styles.cycleDot} ${styles.workTime}`}></span>
+
+        <span className={`${styles.cycleDot} ${styles.shortBreakTime}`}></span>
+
+        <span className={`${styles.cycleDot} ${styles.workTime}`}></span>
+
+        <span className={`${styles.cycleDot} ${styles.shortBreakTime}`}></span>
+
+        <span className={`${styles.cycleDot} ${styles.workTime}`}></span>
+
+        <span className={`${styles.cycleDot} ${styles.longBreakTime}`}></span>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export function Menu() {
         href=''
         className={styles.menuLink}
         aria-label='Ver histórico'
-        title='Ver historico'
+        title='Ver histórico'
       >
         <HistoryIcon />
       </a>
