@@ -57,6 +57,27 @@ export function MainForm() {
       };
     });
   }
+
+  function handleInterruptTask(
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) {
+    e.preventDefault();
+    setState(prevState => {
+      return {
+        ...prevState,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: '00:00',
+        tasks: prevState.tasks.map(task => {
+          if (prevState.activeTask && prevState.activeTask.id === task.id) {
+            return { ...task, interruptDate: Date.now() };
+          }
+          return task;
+        }),
+      };
+    });
+  }
+
   return (
     <form onSubmit={handleCreateNewTask} action='' className='form'>
       <div className='formRow'>
@@ -87,6 +108,7 @@ export function MainForm() {
             title='Iniciar nova tarefa '
             type='submit'
             icon={<PlayCircleIcon />}
+            key={'submitBtn'}
           />
         ) : (
           <DefaultButton
@@ -94,7 +116,9 @@ export function MainForm() {
             title='Interromper tarefa atual '
             type='button'
             color='red'
+            key={'buttonBtn'}
             icon={<StopCircleIcon />}
+            onClick={handleInterruptTask}
           />
         )}
       </div>
