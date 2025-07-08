@@ -8,6 +8,7 @@ import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCycleType } from '../../utils/getNextCycleType';
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
+import { Tips } from '../Tips';
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
@@ -17,7 +18,6 @@ export function MainForm() {
 
   //cyclos
   const nextCyclos = getNextCycle(state.currentCycle);
-
   const nextCycleType = getNextCycleType(nextCyclos);
 
   function handleCreateNewTask(event: React.FormEvent<HTMLElement>) {
@@ -44,6 +44,18 @@ export function MainForm() {
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
   }
 
+  const worker = new Worker(
+    new URL('../../workers/timeWorker.js', import.meta.url),
+  );
+
+  worker.postMessage('ola mundo');
+  worker.onmessage = event => {
+    console.log('Principal recebeu', event.data);
+  };
+  // worker.onmessage = function(event){
+  //   console.log('Principal recebeu',event.data)
+  // }
+
   function handleInterruptTask(
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) {
@@ -65,9 +77,14 @@ export function MainForm() {
           disabled={!!state.activeTask}
         />
       </div>
-      <div className='formRow'>
-        <p>Proximo intervalo 25:00</p>
+      <div className='formRow tips'>
+        <Tips />
       </div>
+      {/* <div className='formRow tips'>
+        {!!state.activeTask && tipsForWhenActiveTask[state.activeTask.type]}
+        {!state.activeTask && tipsForNoActiveTask[nextCycleType]}
+      </div> */}
+
       {state.currentCycle > 0 && (
         <div className='formRow'>
           <Cycles />

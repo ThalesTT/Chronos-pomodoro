@@ -27,3 +27,6 @@ body {
   flex-direction: column;
   gap: 2.4rem;
 }
+.tips {
+  font-size: 1.6rem;
+}

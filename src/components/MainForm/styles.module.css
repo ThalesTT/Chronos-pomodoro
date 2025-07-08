@@ -22,3 +22,7 @@
   width: 2.4rem;
   height: 2.4rem;
 }
+.tips {
+  font-size: 2.2rem;
+  border: 1px solid red;
+}
