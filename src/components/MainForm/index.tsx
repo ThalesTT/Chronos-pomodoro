@@ -44,25 +44,12 @@ export function MainForm() {
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
   }
 
-  const worker = new Worker(
-    new URL('../../workers/timeWorker.js', import.meta.url),
-  );
-
-  worker.postMessage('ola mundo');
-  worker.onmessage = event => {
-    console.log('Principal recebeu', event.data);
-  };
-  // worker.onmessage = function(event){
-  //   console.log('Principal recebeu',event.data)
-  // }
-
   function handleInterruptTask(
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) {
     e.preventDefault();
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
   }
-
   return (
     <form onSubmit={handleCreateNewTask} action='' className='form'>
       <div className='formRow'>
