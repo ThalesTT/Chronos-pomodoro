@@ -13,9 +13,8 @@ import { showMessage } from '../../adapters/showMessage';
 
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
-
-  // const [taskName, setTaskName] = useState('');
   const taskNameInput = useRef<HTMLInputElement>(null);
+  const lastTaskName = state.tasks[state.tasks.length - 1]?.name || '';
 
   //cyclos
   const nextCyclos = getNextCycle(state.currentCycle);
@@ -67,6 +66,7 @@ export function MainForm() {
           // onChange={e => setTaskName(e.target.value)}
           ref={taskNameInput}
           disabled={!!state.activeTask}
+          defaultValue={lastTaskName}
         />
       </div>
       <div className='formRow tips'>
