@@ -35,3 +35,13 @@
   text-align: left;
   padding: 1.6rem;
 }
+.thSort {
+  cursor: pointer;
+  transition: all o.1s ease-in-out;
+}
+.thSort:hover {
+  filter: brightness(80%);
+}
+p {
+  font-size: 1.8rem;
+}
