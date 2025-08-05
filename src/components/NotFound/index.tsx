@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import { MainTemplate } from '../../templates/MainTemplate';
 import { Container } from '../Container';
 import { GenericHtml } from '../GenericHtml';
 import { Heading } from '../Heading';
 
 export function NotFound() {
+  useEffect(() => {
+    document.title = 'Pagina não encontrada';
+  }, []);
   return (
     <MainTemplate>
       <Container>

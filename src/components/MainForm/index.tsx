@@ -60,10 +60,8 @@ export function MainForm() {
         <DefaultInput
           type='text'
           id='meuInput'
-          labelText='Task'
+          labelText='Tarefa'
           placeholder='Digite aqui'
-          // value={taskName}
-          // onChange={e => setTaskName(e.target.value)}
           ref={taskNameInput}
           disabled={!!state.activeTask}
           defaultValue={lastTaskName}
@@ -72,10 +70,6 @@ export function MainForm() {
       <div className='formRow tips'>
         <Tips />
       </div>
-      {/* <div className='formRow tips'>
-        {!!state.activeTask && tipsForWhenActiveTask[state.activeTask.type]}
-        {!state.activeTask && tipsForNoActiveTask[nextCycleType]}
-      </div> */}
 
       {state.currentCycle > 0 && (
         <div className='formRow'>

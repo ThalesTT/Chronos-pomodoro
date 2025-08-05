@@ -26,6 +26,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 2.4rem;
+  font-size: 1.6rem;
 }
 .tips {
   font-size: 1.6rem;
