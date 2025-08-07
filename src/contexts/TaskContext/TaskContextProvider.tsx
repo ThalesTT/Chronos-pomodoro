@@ -30,7 +30,6 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
   const worker = TmWorkerManager.getInstance();
   worker.onmessage(e => {
     const countDownSeconds = e.data;
-    console.log(countDownSeconds);
 
     if (countDownSeconds <= 0) {
       if (playBeep.current) {
@@ -38,7 +37,6 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
         playBeep.current = null;
       }
       dispatch({ type: TaskActionTypes.COMPLETE_TASK });
-      console.log('Worker completo');
       worker.terminate();
     } else {
       dispatch({
@@ -51,7 +49,6 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
   useEffect(() => {
     localStorage.setItem('state', JSON.stringify(state));
     if (!state.activeTask) {
-      console.log('worker terminado por falta de active task');
       worker.terminate();
     }
     document.title = `${state.formattedSecondsRemaining}-Chronos Pomodoro`;
