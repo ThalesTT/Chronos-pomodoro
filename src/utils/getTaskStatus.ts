@@ -1,4 +1,4 @@
-import type { TaskModel } from '../models/taskModel';
+import type { TaskModel } from '../models/TaskModel';
 
 export function getTaskStatus(task: TaskModel, activeTask: TaskModel | null) {
   if (task.completeDate) return 'Completa';

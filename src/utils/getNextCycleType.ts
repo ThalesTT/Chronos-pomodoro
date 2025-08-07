@@ -1,4 +1,4 @@
-import type { TaskModel } from '../models/taskModel';
+import type { TaskModel } from '../models/TaskModel';
 
 export function getNextCycleType(cyclo: number): TaskModel['type'] {
   if (cyclo === 8) return 'longBreakTime';

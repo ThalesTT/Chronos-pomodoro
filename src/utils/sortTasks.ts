@@ -1,6 +1,6 @@
 // Função genérica para ordenar o array de tasks
 
-import type { TaskModel } from '../models/taskModel';
+import type { TaskModel } from '../models/TaskModel';
 
 //
 
